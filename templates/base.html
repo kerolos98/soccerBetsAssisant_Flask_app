@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="myNav" class="overlay">
+<center><p><font face = "WildWest" size = "7" color="pink">Matches Board</h1><p/><center/>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+ {% for key, value in matches.items() %}
+    <font face = "WildWest" color="white">(Away){{value[0]['awayteam']}} VS {{value[1]['hometeam']}}(Home)</a>
+    <a>home win odds:{{odd[key]['homeWin']}}</a> 
+    <a>draw odds:{{odd[key]['draw']}}</a>
+    <a>away win odds:{{odd[key]['awayWin']}}</a>
+ {% endfor %}
+  </div>
+</div>
+
+<center><font face = "WildWest" size = "6" color="pink">soccer betting assistant</h2><br><center/>
+<center><font face = "WildWest" size = "5" color="pink">Click on the tap below to show the matches of matchday and odds.</p><center/>
+
+<span  style="font-size:30px" ;cursor:pointer" onclick="openNav()">&#9776; Matches</span>
+<a href="/">
+    <form action="/">
+         <input class="btn" type="button" value="HOME" />
+    </form>
+</a>
+   <center><p><font face = "WildWest" size = "7" color="white">TEAMS</h1><p/><center/>
+    <body style="background-color:black;">
+            
+	{% for key, value in foobar.items() %}
+ 	 <font face = "WildWest" size = "6" color="pink">{{key}}<p/>
+        
+   	<font face = "WildWest" size = "5" color="white">matches played:{{coobar[key]['played']}}<br>
+        matches wins:{{coobar[key]['wins']}}<br>
+        matches losses:{{coobar[key]['losses']}}<br>
+        matches first:{{coobar[key]['first']}}<br>
+        matches last:{{coobar[key]['last']}} <br>
+        
+	{% endfor %}
+	</body>
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>   
+</body>
+</html>
+

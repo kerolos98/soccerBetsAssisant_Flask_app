@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body style="background-color:powderblue;">
+<h1 style="font-family:verdana;">soccer betting assistant</h1>
+<body/>
+</head>
+<body style="background-color:blue;">
+<form action="team" method="POST">
+{% for key, value in foobar.items() %}
+  <p style="font-size:160%;">{{ key }} : {{ value }}<p/>
+
+
+{% endfor %}
+<p style="font-size:220%;">select the number of the desired team<p/>
+<br>
+<input type="text" name="teamName">
+<br/>
+<input type="submit" value="submit" id="greet">
+<form/>
+</body>
+</html>
