@@ -1,1 +1,1 @@
-web: gunicorn betting:app
+web: gunicorn betting.wsgi
